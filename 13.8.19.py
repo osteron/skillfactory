@@ -16,15 +16,15 @@ try:
 except ValueError as number:
     print("Вы ввели неверное значение.\nВыход из программы.")
 else:
-    sum = 0
+    prices = 0
     print("Введите для каждого приобретаемого билета возраст участника.")
     for i in range(number):
         q = int(input(f"№ {i+1}: "))
         if 18 <= q < 25:
-            sum += 990
+            prices += 990
         elif q >= 25:
-            sum += 1390
+            prices += 1390
     if all([number > 3,
-            sum > 0]):
-        sum *= 0.9
-    print(f"Количество билетов: {number}. Сумма к оплате: {sum}")
+            prices > 0]):
+        prices *= 0.9
+    print(f"Количество билетов: {number}. Сумма к оплате: {prices}")
