@@ -82,7 +82,7 @@ def main():
         before, after = search(numbers, entry_number, 0, (len(numbers) - 1))
     else:
         quit_program('Число не входит в заданный диапазон.')
-
+    # выводим позиции элементов в удобном виде (от 1 и тд)
     print(f'Число {entry_number}. Меньше: число {numbers[before]} - позиция {before + 1}, больше/равно: '
           f'число {numbers[after]} - позиция {after + 1}.')
     input("\nНажмите Enter, чтобы выйти.")
