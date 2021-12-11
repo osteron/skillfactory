@@ -29,14 +29,14 @@ def convert(message: telebot.types.Message):
         if len(values) != 3:
             raise APIException('Неверное количество параметров')
 
-        quote, base, amount = values
-        total_base = CryptoConvertor.get_price(quote, base, amount)
+        base, quote, amount = values
+        total_base = CryptoConvertor.get_price(base, quote, amount)
     except APIException as e:
         bot.reply_to(message, f'Ошибка пользователя.\n{e}')
     except Exception as e:
         bot.reply_to(message, f'Не удалось обработать команду\n{e}')
     else:
-        text = f'Цена {keys[quote]} в {keys[base]} - {total_base}'
+        text = f'Цена {keys[base]} в {keys[quote]} - {total_base}'
         bot.send_message(message.chat.id, text)
 
 
